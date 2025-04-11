@@ -1,3 +1,7 @@
+## 0.0.4
+
+Rename LauncherUtilPlatform.
+
 ## 0.0.3
 
 Fix plugin's name typo.
