@@ -1,12 +1,12 @@
-import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_interface_fallback.dart';
+import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_fallback.dart';
 import 'package:deeplink_x_platform_interface/src/models/android_intent_option.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  late LauncherUtilPlatformInterfaceFallback fallbackImplementation;
+  late LauncherUtilPlatformFallback fallbackImplementation;
 
   setUp(() {
-    fallbackImplementation = LauncherUtilPlatformInterfaceFallback();
+    fallbackImplementation = LauncherUtilPlatformFallback();
   });
 
   group('LauncherUtilPlatformInterfaceFallback', () {

@@ -1,9 +1,9 @@
-import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_interface.dart';
+import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform.dart';
 import 'package:deeplink_x_platform_interface/src/models/android_intent_option.dart';
 
 /// Fallback implementation that throws `UnimplementedError` or provides a no-op.
 /// This prevents crashes on unsupported platforms and ensures a consistent API.
-class LauncherUtilPlatformInterfaceFallback extends LauncherUtilPlatformInterface {
+class LauncherUtilPlatformFallback extends LauncherUtilPlatform {
   @override
   Future<bool> launchUrl(final Uri uri) async {
     throw UnimplementedError('launchUrl() not implemented on this platform.');

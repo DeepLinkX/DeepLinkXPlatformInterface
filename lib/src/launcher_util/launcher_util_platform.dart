@@ -1,4 +1,4 @@
-import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_interface_fallback.dart';
+import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_fallback.dart';
 import 'package:deeplink_x_platform_interface/src/models/android_intent_option.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -12,29 +12,29 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 /// concrete implementations for the defined methods.
 ///
 /// The default instance of this interface is set to
-/// [LauncherUtilPlatformInterfaceFallback], which serves as a fallback
+/// [LauncherUtilPlatformFallback], which serves as a fallback
 /// implementation for platforms that do not support the required features.
-abstract class LauncherUtilPlatformInterface extends PlatformInterface {
-  /// Creates an instance of [LauncherUtilPlatformInterface].
+abstract class LauncherUtilPlatform extends PlatformInterface {
+  /// Creates an instance of [LauncherUtilPlatform].
   ///
   /// This constructor initializes the platform interface with a unique token
   /// to ensure that only subclasses can be instantiated. It is intended to be
   /// used by platform-specific implementations of the launcher utilities.
-  LauncherUtilPlatformInterface() : super(token: _token);
+  LauncherUtilPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static LauncherUtilPlatformInterface _instance = LauncherUtilPlatformInterfaceFallback();
+  static LauncherUtilPlatform _instance = LauncherUtilPlatformFallback();
 
-  /// The default instance of [LauncherUtilPlatformInterface] to use.
+  /// The default instance of [LauncherUtilPlatform] to use.
   ///
-  /// Defaults to [LauncherUtilPlatformInterfaceFallback].
-  static LauncherUtilPlatformInterface get instance => _instance;
+  /// Defaults to [LauncherUtilPlatformFallback].
+  static LauncherUtilPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [LauncherUtilPlatformInterface] when
+  /// platform-specific class that extends [LauncherUtilPlatform] when
   /// they register themselves.
-  static set instance(final LauncherUtilPlatformInterface instance) {
+  static set instance(final LauncherUtilPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }
