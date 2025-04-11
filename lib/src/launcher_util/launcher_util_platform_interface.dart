@@ -1,5 +1,5 @@
-import 'package:deeplink_x_platfrom_interface/src/launcher_util/launcher_util_platform_interface_fallback.dart';
-import 'package:deeplink_x_platfrom_interface/src/models/android_intent_option.dart';
+import 'package:deeplink_x_platform_interface/src/launcher_util/launcher_util_platform_interface_fallback.dart';
+import 'package:deeplink_x_platform_interface/src/models/android_intent_option.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// An abstract class that defines the interface for platform-specific
