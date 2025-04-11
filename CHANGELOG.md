@@ -1,3 +1,7 @@
+## 0.0.3
+
+Fix plugin's name typo.
+
 ## 0.0.2
 
 Move mocktail to dev_dependencies.

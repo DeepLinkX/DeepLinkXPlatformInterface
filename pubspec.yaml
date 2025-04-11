@@ -1,6 +1,6 @@
 name: deeplink_x_platform_interface
 description: "A common platform interface for the deeplink_x plugin."
-version: 0.0.2
+version: 0.0.3
 
 repository: https://github.com/DeeplinkX/DeeplinkXPlatformInterface
 
