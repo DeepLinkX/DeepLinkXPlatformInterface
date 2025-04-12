@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 /// Represents the options for an Android Intent.
 ///
 /// This class encapsulates the parameters that can be used to build an
@@ -8,7 +10,7 @@
 ///
 /// See [Android Intents](https://developer.android.com/reference/android/content/Intent.html)
 /// for more information on how to use Intents.
-class AndroidIntentOption {
+class AndroidIntentOption extends Equatable {
   /// Creates an instance of [AndroidIntentOption] with the specified parameters.
   ///
   /// The constructor requires at least one of [action] or [componentName] to be
@@ -24,7 +26,7 @@ class AndroidIntentOption {
   /// [package] specifies the package name to resolve the data within.
   /// [componentName] is the specific component that should handle the intent.
   /// [type] sets an explicit MIME type for the intent.
-  AndroidIntentOption({
+  const AndroidIntentOption({
     this.action,
     this.flags,
     this.category,
@@ -35,6 +37,9 @@ class AndroidIntentOption {
     this.componentName,
     this.type,
   }) : assert(action != null || componentName != null, 'action or component (or both) must be specified');
+
+  @override
+  List<Object?> get props => [action, flags, category, data, arguments, arrayArguments, package, componentName, type];
 
   /// This is the general verb that the intent should attempt to do. This
   /// includes constants like `ACTION_VIEW`.
