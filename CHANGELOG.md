@@ -1,3 +1,7 @@
+## 0.0.5
+
+Now AndroidIntentOption accepts equatable.
+
 ## 0.0.4
 
 Rename LauncherUtilPlatform.
