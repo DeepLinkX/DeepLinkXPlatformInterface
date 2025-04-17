@@ -51,26 +51,27 @@ abstract class LauncherUtilPlatform extends PlatformInterface {
   /// support intents.
   Future<void> launchIntent(final AndroidIntentOption options);
 
-  /// Launches an app by its package name (Android-only).
+  /// Launches an app by its package name.
   ///
-  /// This method is used to open an application directly using its package
-  /// name.
-  Future<void> launchAndroidApp(final String packageName);
+  /// Returns a [Future] that resolves to a boolean indicating whether the
+  /// operation was successful.
+  Future<bool> launchAppByPackageName(final String packageName);
 
-  /// Launches an app using its scheme (e.g., `myapp://`).
+  /// Launches an app by its scheme.
   ///
-  /// This method is used to open an application using its defined URI scheme.
-  Future<void> launchApp(final String scheme);
+  /// Returns a [Future] that resolves to a boolean indicating whether the
+  /// operation was successful.
+  Future<bool> launchAppByScheme(final String scheme);
 
-  /// Checks if an Android app is installed by its package name.
+  /// Checks if an app is installed by its package name.
   ///
   /// Returns a [Future] that resolves to a boolean indicating whether the
   /// specified app is installed on the device.
-  Future<bool> isAndroidAppInstalled(final String packageName);
+  Future<bool> isAppInstalledByPackageName(final String packageName);
 
-  /// Checks if an app that handles a certain scheme is installed.
+  /// Checks if an app is installed by its scheme.
   ///
-  /// Returns a [Future] that resolves to a boolean indicating whether an
-  /// app that can handle the specified scheme is installed on the device.
-  Future<bool> isAppInstalled(final String scheme);
+  /// Returns a [Future] that resolves to a boolean indicating whether the
+  /// specified app is installed on the device.
+  Future<bool> isAppInstalledByScheme(final String scheme);
 }

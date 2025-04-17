@@ -15,22 +15,22 @@ class LauncherUtilPlatformFallback extends LauncherUtilPlatform {
   }
 
   @override
-  Future<void> launchAndroidApp(final String packageName) async {
-    throw UnimplementedError('launchAndroidApp() not implemented on this platform.');
+  Future<bool> launchAppByPackageName(final String packageName) async {
+    throw UnimplementedError('launchAppByPackageName() not implemented on this platform.');
   }
 
   @override
-  Future<void> launchApp(final String scheme) async {
-    throw UnimplementedError('launchApp() not implemented on this platform.');
+  Future<bool> launchAppByScheme(final String scheme) async {
+    throw UnimplementedError('launchAppByScheme() not implemented on this platform.');
   }
 
   @override
-  Future<bool> isAndroidAppInstalled(final String packageName) async {
-    throw UnimplementedError('isAndroidAppInstalled() not implemented on this platform.');
+  Future<bool> isAppInstalledByPackageName(final String packageName) async {
+    throw UnimplementedError('isAppInstalledByPackageName() not implemented on this platform.');
   }
 
   @override
-  Future<bool> isAppInstalled(final String scheme) async {
-    throw UnimplementedError('isAppInstalled() not implemented on this platform.');
+  Future<bool> isAppInstalledByScheme(final String scheme) async {
+    throw UnimplementedError('isAppInstalledByScheme() not implemented on this platform.');
   }
 }

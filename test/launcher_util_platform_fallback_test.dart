@@ -19,7 +19,7 @@ void main() {
     });
 
     test('launchIntent throws UnimplementedError', () async {
-      final testOptions = AndroidIntentOption(
+      const testOptions = AndroidIntentOption(
         action: 'android.intent.action.VIEW',
         data: 'https://example.com',
       );
@@ -29,34 +29,34 @@ void main() {
       );
     });
 
-    test('launchAndroidApp throws UnimplementedError', () async {
+    test('launchAppByPackageName throws UnimplementedError', () async {
       const testPackage = 'com.example.app';
       expect(
-        () => fallbackImplementation.launchAndroidApp(testPackage),
+        () => fallbackImplementation.launchAppByPackageName(testPackage),
         throwsA(isA<UnimplementedError>()),
       );
     });
 
-    test('launchApp throws UnimplementedError', () async {
+    test('launchAppByScheme throws UnimplementedError', () async {
       const testScheme = 'myapp://';
       expect(
-        () => fallbackImplementation.launchApp(testScheme),
+        () => fallbackImplementation.launchAppByScheme(testScheme),
         throwsA(isA<UnimplementedError>()),
       );
     });
 
-    test('isAndroidAppInstalled throws UnimplementedError', () async {
+    test('isAppInstalledByPackageName throws UnimplementedError', () async {
       const testPackage = 'com.example.app';
       expect(
-        () => fallbackImplementation.isAndroidAppInstalled(testPackage),
+        () => fallbackImplementation.isAppInstalledByPackageName(testPackage),
         throwsA(isA<UnimplementedError>()),
       );
     });
 
-    test('isAppInstalled throws UnimplementedError', () async {
+    test('isAppInstalledByScheme throws UnimplementedError', () async {
       const testScheme = 'myapp://';
       expect(
-        () => fallbackImplementation.isAppInstalled(testScheme),
+        () => fallbackImplementation.isAppInstalledByScheme(testScheme),
         throwsA(isA<UnimplementedError>()),
       );
     });

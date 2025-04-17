@@ -38,7 +38,7 @@ void main() {
     });
 
     test('launchIntent delegates to platform implementation', () async {
-      final testOptions = AndroidIntentOption(
+      const testOptions = AndroidIntentOption(
         action: 'android.intent.action.VIEW',
         data: 'https://example.com',
       );
@@ -49,41 +49,41 @@ void main() {
       verify(() => mockPlatform.launchIntent(testOptions)).called(1);
     });
 
-    test('launchAndroidApp delegates to platform implementation', () async {
+    test('launchAppByPackageName delegates to platform implementation', () async {
       const testPackage = 'com.example.app';
-      when(() => mockPlatform.launchAndroidApp(testPackage)).thenAnswer((final _) async {});
+      when(() => mockPlatform.launchAppByPackageName(testPackage)).thenAnswer((final _) async => true);
 
-      await LauncherUtilPlatform.instance.launchAndroidApp(testPackage);
+      await LauncherUtilPlatform.instance.launchAppByPackageName(testPackage);
 
-      verify(() => mockPlatform.launchAndroidApp(testPackage)).called(1);
+      verify(() => mockPlatform.launchAppByPackageName(testPackage)).called(1);
     });
 
-    test('launchApp delegates to platform implementation', () async {
+    test('launchAppByScheme delegates to platform implementation', () async {
       const testScheme = 'myapp://';
-      when(() => mockPlatform.launchApp(testScheme)).thenAnswer((final _) async {});
+      when(() => mockPlatform.launchAppByScheme(testScheme)).thenAnswer((final _) async => true);
 
-      await LauncherUtilPlatform.instance.launchApp(testScheme);
+      await LauncherUtilPlatform.instance.launchAppByScheme(testScheme);
 
-      verify(() => mockPlatform.launchApp(testScheme)).called(1);
+      verify(() => mockPlatform.launchAppByScheme(testScheme)).called(1);
     });
 
-    test('isAndroidAppInstalled delegates to platform implementation', () async {
+    test('isAppInstalledByPackageName delegates to platform implementation', () async {
       const testPackage = 'com.example.app';
-      when(() => mockPlatform.isAndroidAppInstalled(testPackage)).thenAnswer((final _) async => true);
+      when(() => mockPlatform.isAppInstalledByPackageName(testPackage)).thenAnswer((final _) async => true);
 
-      final result = await LauncherUtilPlatform.instance.isAndroidAppInstalled(testPackage);
+      final result = await LauncherUtilPlatform.instance.isAppInstalledByPackageName(testPackage);
 
-      verify(() => mockPlatform.isAndroidAppInstalled(testPackage)).called(1);
+      verify(() => mockPlatform.isAppInstalledByPackageName(testPackage)).called(1);
       expect(result, true);
     });
 
-    test('isAppInstalled delegates to platform implementation', () async {
+    test('isAppInstalledByScheme delegates to platform implementation', () async {
       const testScheme = 'myapp://';
-      when(() => mockPlatform.isAppInstalled(testScheme)).thenAnswer((final _) async => true);
+      when(() => mockPlatform.isAppInstalledByScheme(testScheme)).thenAnswer((final _) async => true);
 
-      final result = await LauncherUtilPlatform.instance.isAppInstalled(testScheme);
+      final result = await LauncherUtilPlatform.instance.isAppInstalledByScheme(testScheme);
 
-      verify(() => mockPlatform.isAppInstalled(testScheme)).called(1);
+      verify(() => mockPlatform.isAppInstalledByScheme(testScheme)).called(1);
       expect(result, true);
     });
   });
